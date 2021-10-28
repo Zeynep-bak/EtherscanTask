@@ -36,7 +36,7 @@ public class Driver {
             We read our browser type from configuration.properties file using
             .getProperty method we creating in ConfigurationReader class.
              */
-            String browserType = com.adidas.utilities.ConfigurationReader.getProperty("browser");
+            String browserType = com.etherscan.utility.ConfigurationReader.getProperty("browser");
 
             /*
             Depending on the browser type our switch statement will determine

@@ -9,6 +9,6 @@ public class Etherscan {
         WebDriverManager.chromedriver().setup();
 
         WebDriver driver= new ChromeDriver();
-        driver.get();
+        driver.get("https://etherscan.io/register");
     }
 }
