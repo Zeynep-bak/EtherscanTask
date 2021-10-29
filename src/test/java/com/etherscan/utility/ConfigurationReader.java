@@ -1,40 +1,32 @@
 package com.etherscan.utility;
 
-
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * reads the properties file configuration.properties
+ */
 public class ConfigurationReader {
 
-    //#1- Create properties object
-    private static Properties properties = new Properties();
+    private static Properties properties;
 
     static {
 
         try {
-            //#2- Load the file into FileInputStream
-            FileInputStream file = new FileInputStream("configuration.properties");
+            String path = "configuration.properties";
+            FileInputStream input = new FileInputStream(path);
+            properties = new Properties();
+            properties.load(input);
 
-            //#3- load properties object with the file (configuration.properties)
-            properties.load(file);
-
-            //close the file
-            file.close();
-
-        } catch (IOException e) {
-
-            System.out.println("File not found in Configuration properties.");
+            input.close();
+        } catch (Exception e) {
+            e.printStackTrace();
 
         }
-
     }
 
-    //USE THE ABOVE CREATED LOGIC TO CREATE A RE-USABLE STATIC METHOD
-    public static String getProperty(String keyWord){
-
-        return properties.getProperty(keyWord);
+    public static String get(String keyName) {
+        return properties.getProperty(keyName);
     }
-
 
 }

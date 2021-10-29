@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePage {
 
     public BasePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.get(),this);
     }
 
     @FindBy(name = "ctl00$ContentPlaceHolder1$txtUserName")
@@ -17,8 +17,25 @@ public class BasePage {
     @FindBy(css = "input[aria-label=\"Email address\"]")
     public WebElement emailField;
 
-    @FindBy(css = ".recaptcha-checkbox.goog-inline-block.recaptcha-checkbox-unchecked.rc-anchor-checkbox")
-    public WebElement NoRobotBox;
+    @FindBy(css = "input[id='ContentPlaceHolder1_txtPassword']")
+    public WebElement passwordbox;
+
+    @FindBy(css = "input[id='ContentPlaceHolder1_txtPassword2']")
+    public WebElement confirmpasswrdbox;
+
+    @FindBy(xpath = "//*[text()='I agree to the ']")
+    public WebElement agreebox;
+
+    @FindBy(xpath = "//*[text()='I agree to receive the Etherscan newsletter and understand that I can ")
+    public WebElement agreebox2;
+
+    @FindBy(id = "ContentPlaceHolder1_btnRegister")
+    public WebElement createAccountbox;
+
+    @FindBy(css = "a[href='login']")
+    public WebElement alreadyAccount;
+
+
 
 
 }
