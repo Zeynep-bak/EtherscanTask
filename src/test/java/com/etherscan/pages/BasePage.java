@@ -1,6 +1,7 @@
 package com.etherscan.pages;
 
 import com.etherscan.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,11 +24,8 @@ public abstract class BasePage {
     @FindBy(css = "input[id='ContentPlaceHolder1_txtPassword2']")
     public WebElement confirmpasswrdbox;
 
-    @FindBy(xpath = "//*[text()='I agree to the ']")
-    public WebElement agreebox;
-
-    @FindBy(xpath = "//*[text()='I agree to receive the Etherscan newsletter and understand that I can ")
-    public WebElement agreebox2;
+    @FindBy(xpath = "//*[contains(text(),'Terms and Conditions')]")
+    public WebElement checkbox;
 
     @FindBy(id = "ContentPlaceHolder1_btnRegister")
     public WebElement createAccountbox;
@@ -37,6 +35,20 @@ public abstract class BasePage {
 
 
 
+    public void login(String userNameStr, String passwordStr,String  email, String cnfrmpasword) {
+        usernameField.sendKeys(userNameStr);
+        passwordbox.sendKeys(passwordStr);
+        emailField.sendKeys(email);
+        confirmpasswrdbox.sendKeys(cnfrmpasword);
+    }
+
+        public void clickTo(String box){
+        Driver.get().findElement(By.xpath("//*[contains(text(),'"+box+"')]")).click();
+          //*[contains(text(),'I agree to')]
+
+
+
+    }
 
 
 

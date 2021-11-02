@@ -29,7 +29,8 @@ public class Etherscan {
         WebElement loginbtn = driver.findElement(By.cssSelector("a[href='login']"));
         loginbtn.click();
 
-       // driver.quit();
+       // driver.quit();  //ContentPlaceHolder1_txtPassword-error
+        // ContentPlaceHolder1_txtPassword2-error
 
     }
 }
