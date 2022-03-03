@@ -44,7 +44,7 @@ public abstract class BasePage {
 
         public void clickTo(String box){
         Driver.get().findElement(By.xpath("//*[contains(text(),'"+box+"')]")).click();
-          //*[contains(text(),'I agree to')]
+
 
 
 

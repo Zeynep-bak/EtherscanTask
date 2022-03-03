@@ -19,11 +19,8 @@ public class RegistrationPage extends BasePage{
         Driver.get().findElement(By.xpath("//*[contains(text(),'" + error + "')]")).click();
     }
 
-   // @FindBy(id = "ContentPlaceHolder1_txtPassword2-error")
-  //  public WebElement errormessage2;
-
-//    public void getMessage(String  message){
-//        message = errormessage.getText();
-
-//    }
+   public String getMessage(String message){
+         String actualMsg= Driver.get().findElement(By.xpath("//*[contains(text(),'"+message+"')]")).getText();
+        return message;
+   }
 }

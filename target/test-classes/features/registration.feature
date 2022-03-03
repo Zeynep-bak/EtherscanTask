@@ -8,16 +8,16 @@ Feature: Registration functionality
     Given  the user on the registration page
 
   Scenario: Registration with valid credentials
-    When the user enters "username" "password" "email" "password"
-    And the user clicks to "I agree to the " Terms and Conditions
-    And the user clicks to "I agree to receive the" Etherscan newsletter
+    When the user enters "username" "password" "email@gmail.com" "password"
+    And the user clicks to "I agree to the "
+    And the user clicks to "I agree to receive the"
     And the user clicks to "I am not a robot"
     And  the user clicks to "Create an Account"
     Then "Your account has been successfully registered and pending for email verification."message appear
 
     Scenario: Register without click Recieve newletters checkbox
-      When the user enters "username" "password" "email" "confirmpassword"
-      And the user clicks to "I agree to the " Terms and Conditions
+      When the user enters "username" "password" "email@gmail.com" "confirmpassword"
+      And the user clicks to "I agree to the "
       And the user clicks to "I am not a robot"
       And  the user clicks to "Create an Account"
       Then "Your account has been successfully registered and pending for email verification."message appear
@@ -25,8 +25,8 @@ Feature: Registration functionality
       @Negative
   Scenario Outline: Enter invalid credentials
      When the user enters "<username>" "<password>" "<email>" "<confirmpassword>"
-        And the user clicks to "I agree to the " Terms and Conditions
-        And the user clicks to "I agree to receive the" Etherscan newsletter
+     And the user clicks to "I agree to the "
+     And the user clicks to "I agree to receive the"
      And the user clicks to "I am not a robot"
      And  the user clicks to "Create an Account"
      Then "<message>" message should appeare
@@ -55,8 +55,8 @@ Feature: Registration functionality
 
   Scenario Outline: Enter with same valid credentials
     When the user enters "<username>" "<password>" "<email>" "<confirmpassword>"
-    And the user clicks to "I agree to the " Terms and Conditions
-    And the user clicks to "I agree to receive the" Etherscan newsletter
+    And the user clicks to "I agree to the "
+    And the user clicks to "I agree to receive the"
     And the user clicks to "I am not a robot"
     And  the user clicks to "Create an Account"
     Then "<message>" message should appeare
@@ -72,15 +72,14 @@ Feature: Registration functionality
 
  Scenario: Register without click Terms and conditions checkbox
    When the user enters "username" "password" "email" "password"
-   And the user clicks to "I agree to the " Terms and Conditions
+   And the user clicks to "I agree to the "
    And the user clicks to "I'm not a robot"
    And  the user clicks to "Create an Account"
    Then "<message>" message should appeare
 
   Scenario: Register without click I am not a robot checkbox
     When the user enters "username" "password" "email" "password"
-    And the user clicks to "I agree to the " Terms and Conditions
-    And the user clicks to "I agree to receive the" Etherscan newsletter
+    And the user clicks to "I agree to the "
+    And the user clicks to "I agree to receive the"
     And  the user clicks to "Create an Account"
-
     Then "<message>" message should appeare

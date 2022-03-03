@@ -27,36 +27,14 @@ public class registrationStepDefs {
     public void the_user_clicks_to(String checkbox) {
         BrowserUtils.waitFor(1);
     new RegistrationPage().clickTo(checkbox);
-    //public void clickBtn(String btnName){
-        //
-        //        Driver.get().findElement(By.id(""+btnName+"")).click();
-        //
-        //
-        //    }
+
     }
 
-    @Then("\"Your account has been successfully registered and pending for email verification.\"message appear")
-    public void your_account_has_been_successfully_registered_and_pending_for_email_verification_message_appear() {
-
+    @Then("{string}message appear")
+    public void messageAppear(String module) {
     }
 
     @Then("{string} message should appeare")
-    public void messageShouldAppeare(String expected) {
-
-     String actualmes= new RegistrationPage().errormessage.getText();
-        System.out.println(actualmes);
-        //Assert.assertEquals(expected,actualmes);
-
-    }
-    @When("the user clicks to {string} Terms and Conditions")
-    public void the_user_clicks_to_Terms_and_Conditions(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @When("the user clicks to {string} Etherscan newsletter")
-    public void the_user_clicks_to_Etherscan_newsletter(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void messageShouldAppeare(String message) {
     }
 }
